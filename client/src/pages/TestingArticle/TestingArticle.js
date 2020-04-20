@@ -13,6 +13,12 @@ import code7 from "../../assets/code-7.png"
 import code8 from "../../assets/code-8.png"
 import code9 from "../../assets/code-9.png"
 import code10 from "../../assets/code-10.png"
+import code11 from "../../assets/code-11.png"
+import code12 from "../../assets/code-12.png"
+import code13 from "../../assets/code-13.png"
+import code14 from "../../assets/code-14.png"
+import code15 from "../../assets/code-15.png"
+
 
 class TestingArticle extends Component {
     render() {
@@ -100,7 +106,14 @@ class TestingArticle extends Component {
                     </div>
                     <p className="TestingArticle__description">
                         The first command creates your package.json file and the second installs Jest as a development dependency.
+                        Now in your package.json file, find (or create) the test property in the scripts object and set its value to "jest".
                     </p>
+                    <div className="TestingArticle__terminal-container">
+                        <p className="TestingArticle__terminal-code">
+                            <span className="lighter-blue">"test"</span> : "jest"
+                            
+                        </p>
+                    </div>
                     <p className="TestingArticle__description">
                         Now we can create our first test, but before we do that we must first use a bit of our imagination. Let's imagine 
                         we are the proud owners of a <span>zoo of exotic cats</span> and we absolutely have to be sure that everything 
@@ -187,14 +200,14 @@ class TestingArticle extends Component {
                     </div>
                     <p className="TestingArticle__description">
                         Also in case you've been living under a rock and haven't caught on already, 
-                        the example scenerio above is based on the Netflix series Tiger King.
+                        the example scenerios above are based on the Netflix series Tiger King.
                     </p>
                     <div className="TestingArticle__gif-container">
                         <iframe className="TestingArticle__gif" src="https://giphy.com/embed/j5Vj1z5D0eKdSIUBA4" width="480" height="222" frameBorder="0"></iframe>
                     </div>
                     <p className="TestingArticle__description">
                         One more thing before we move onto testing React applications. I bet your asking yourself what in the world do we do
-                        if our function is asynchronous? 
+                        if our function is <span>asynchronous</span>? 
                     </p>
                     <p className="TestingArticle__description">
                         Honestly, it's not bad at all. Just treat the function in your test as you normally would if it was asynchronous.
@@ -227,9 +240,9 @@ class TestingArticle extends Component {
                         Testing React Apps
                     </h3>
                     <p className="TestingArticle__description">
-                        Cooooooool!!! Now comes the fun, but trickier question. How do we test our React applications? To explore that
-                        question we will be using Jest and <span>react-testing-library</span>. React-testing-library is a helper tool
-                        that makes testing React components a lot easier.
+                        Cooooooool!!! Now comes the fun, but trickier part, testing our React applications. To explore how to 
+                        test React applications we will be using Jest and <span>react-testing-library</span> in combinationc. 
+                        React-testing-library is a helper tool that makes testing React components a lot easier.
                     </p>
                     <p className="TestingArticle__description">
                         Alright, to start testing with React, we first need a React App. CD out of your testing-with-jest directory and 
@@ -241,9 +254,6 @@ class TestingArticle extends Component {
                         </p>
                         <p className="TestingArticle__terminal-code">
                             <span className="yellow">cd</span> testing-with-react
-                        </p>
-                        <p className="TestingArticle__terminal-code">
-                            <span className="yellow">npm </span> install --save-dev @testing-library/react react-test-render jest-dom
                         </p>
                     </div>
                     <p className="TestingArticle__description">
@@ -268,6 +278,79 @@ class TestingArticle extends Component {
                     <p className="TestingArticle__description">
                         Okay, time to test our Button component! Initially, our button should have the string "1" as its text. Lets make sure 
                         of that by running a test. In our <span>Button.test.js</span> import the following:
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code11} alt="" className="TestingArticle__code-img"/>
+                    </div>
+                    <p className="TestingArticle__description">
+                        Lets quickly go through each import statement here and then we can utilize them to write our test.
+                        In <span>line 1</span> we are import React from "react". This is very important because we will be 
+                        using the "render" method from <span>line 3</span> to render our Button component. <span>Line 4</span> allows
+                        us to use the expect keyword that we have normally been using with Jest. Notice that we didn't have to 
+                        install anything. That's because, React is an absolute sweetheart and already did it for us 🥰.
+                    </p>
+                    <p className="TestingArticle__description">
+                        Alrighty, now we can write our first React test. Remember, our current mission is to ensure that the button element 
+                        in our component is rendering the correct text ("1"). To target a specific element in a testing environment, 
+                        we must give that element a <span>data-testid</span>.
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code13} alt="" className="TestingArticle__code-img TestingArticle__code-img--smaller"/>
+                    </div>
+                    <p className="TestingArticle__description">
+                        Now in our test file, we can test for the button's text content by using that id.
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code12} alt="" className="TestingArticle__code-img"/>
+                    </div>
+                    <p className="TestingArticle__description">
+                        Lets break down whats going on here one line at a time. The <span>first line</span> is what we have 
+                        already been seeing during our time learning Jest. We have a <span>test</span> keyword that takes in 
+                        the name of the test as the first parameter, and a callback function as the second. Inside the callback
+                        function is where the real magic happens. 
+                    </p>
+                    <p className="TestingArticle__description">
+                        In <span>line 2</span> we are using the <span>render</span> keyword 
+                        to render our Button component and then we are extracting the <span>getByTestId</span> method 
+                        from it. The getByTestId method takes in a string as its one parameter. That string can be 
+                        any data-testid we specified on elements in our component. In our case, we only specified one
+                        called "button" on our button tag.
+                    </p>
+                    <p className="TestingArticle__description">
+                        In <span>line 3</span> we are now utlizing the expect keyword we used previous with Jest. This line is the true test. 
+                        Here we are testing if the text content inside the element with data-testid of "button" (our button) has 
+                        the text content of "1". 
+                    </p>
+                    <p className="TestingArticle__description">
+                       If you run this test by writing <span>npm test</span> in your terminal you should see your first 
+                       passing test.
+                    </p>
+                    <p className="TestingArticle__description">
+                       Wow, that was alot of work.... for me. Writing and explaining all this is taking up a lot of my time and energy. But don't worry,
+                       I'll muscle through it! I got a legacy to build.
+                    </p>
+                    <div className="TestingArticle__gif-container">
+                        <iframe className="TestingArticle__gif" src="https://giphy.com/embed/7d90gUSHRg1Fu" width="1000" height="200" frameBorder="0"></iframe>
+                    </div>
+                    <p className="TestingArticle__description">
+                       Now lets start discussing how we test events, such as clicking and hovering, that change the output of our DOM.
+                       In our Button component, if we click on the button, we should expect its text content to change to "2". To simulate 
+                       an event in our test file, we must import <span>fireEvent</span> from <span>"@testing-library/react"</span>.
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code14} alt="" className="TestingArticle__code-img"/>
+                    </div>
+                    <p className="TestingArticle__description">
+                        With fireEvent, we can now simulate a specific event in our testing environment by using one of its many methods. 
+                        In our case, we will be using the .click() method and passing into it the data-testid of the element we are 
+                        trying to manipulate. 
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code15} alt="" className="TestingArticle__code-img"/>
+                    </div>
+                    <p className="TestingArticle__description">
+                        The only thing that really changed here is line 3 & 4. In <span>line 3</span> we are simulating a button click by using fireEvent
+                         and in <span>line 4</span> we are testing if the text content inside that button incremented by 1 and is thus now "2".
                     </p>
                 </div>
             </div>
