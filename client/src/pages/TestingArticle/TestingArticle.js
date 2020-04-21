@@ -18,6 +18,17 @@ import code12 from "../../assets/code-12.png"
 import code13 from "../../assets/code-13.png"
 import code14 from "../../assets/code-14.png"
 import code15 from "../../assets/code-15.png"
+import code16 from "../../assets/code-16.png"
+import code17 from "../../assets/code-17.png"
+import code18 from "../../assets/code-18.png"
+import code19 from "../../assets/code-19.png"
+import code20 from "../../assets/code-20.png"
+import code21 from "../../assets/code-21.png"
+import code22 from "../../assets/code-22.png"
+import code23 from "../../assets/code-23.png"
+import code25 from "../../assets/code-25.png"
+import code26 from "../../assets/code-26.png"
+import code27 from "../../assets/code-27.png"
 
 
 class TestingArticle extends Component {
@@ -266,6 +277,9 @@ class TestingArticle extends Component {
                         For each React component we usually create a folder contains the JavaScript file, the CSS file, and the 
                         test folder which contains the test file for that specific component.
                     </p>
+                    <h3 className="TestingArticle__subber-heading">
+                        Testing our First Component
+                    </h3>
                     <p className="TestingArticle__description">
                         Let start building out our button component. I want to create a button that increases its count everytime 
                         it is clicked. As this is a React testing article, I except that you already have an intermediate
@@ -327,11 +341,14 @@ class TestingArticle extends Component {
                     </p>
                     <p className="TestingArticle__description">
                        Wow, that was alot of work.... for me. Writing and explaining all this is taking up a lot of my time and energy. But don't worry,
-                       I'll muscle through it! I got a legacy to build.
+                       I'll muscle through it! I got a <span>legacy</span> to build.
                     </p>
                     <div className="TestingArticle__gif-container">
                         <iframe className="TestingArticle__gif" src="https://giphy.com/embed/7d90gUSHRg1Fu" width="1000" height="200" frameBorder="0"></iframe>
                     </div>
+                    <h3 className="TestingArticle__subber-heading">
+                        Event Handling
+                    </h3>
                     <p className="TestingArticle__description">
                        Now lets start discussing how we test events, such as clicking and hovering, that change the output of our DOM.
                        In our Button component, if we click on the button, we should expect its text content to change to "2". To simulate 
@@ -349,9 +366,169 @@ class TestingArticle extends Component {
                         <img src={code15} alt="" className="TestingArticle__code-img"/>
                     </div>
                     <p className="TestingArticle__description">
-                        The only thing that really changed here is line 3 & 4. In <span>line 3</span> we are simulating a button click by using fireEvent
-                         and in <span>line 4</span> we are testing if the text content inside that button incremented by 1 and is thus now "2".
+                        The only thing that really changed here from the previous example is line 3 & 4. In <span>line 3</span> we are simulating a button click by using fireEvent
+                         and calling its click method and in <span>line 4</span> we are testing if the text content inside that button incremented by 
+                         1 and is thus now "2".
                     </p>
+                    <p className="TestingArticle__description">
+                       Again, if you run this test by writing <span>npm test</span> in your terminal you should see your another
+                       passing test.
+                    </p>
+                    <h3 className="TestingArticle__subber-heading">
+                        Nested Components
+                    </h3>
+                    <p className="TestingArticle__description">
+                        If you know anything about React, you know you never really have just one component in isolation. Components are usually nesting other 
+                        components or are being nested by other components. With react-testing-library you can perform <span>integration tests</span> to test 
+                        these nested components.
+                    </p>
+                    <p className="TestingArticle__description">
+                        Integration tests are tests that combine individual units and tests them as a group. 
+                    </p>
+                    <p className="TestingArticle__description">
+                        Let begin by creating another component that nests our Button component. I will create an Age component that simply displays your current 
+                        age on an h1 tag. It will also contain the Button component which will increment your age everytime its clicked. To accomplish this, we need to 
+                        do some refactoring.
+                    </p>
+                    <p className="TestingArticle__description">
+                        Below is our refactored Button component. Please note to remove all your tests in your Button.test.js file as they will 
+                        now fail due to the refactor.
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code17} alt="" className="TestingArticle__code-img TestingArticle__code-img--smaller"/>
+                    </div>
+                    <p className="TestingArticle__description">
+                        And here is our Age component.
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code16} alt="" className="TestingArticle__code-img TestingArticle__code-img--smaller"/>
+                    </div>
+                    <p className="TestingArticle__description">
+                        Okay, let's now test if this works as expected. In your Age folder, create a __test__ folder which will house our Age.test.js file.
+                        Before we perform any real tests, its important to know what exactly we are rendering here. If you come from an <span>Enzyme</span> background,
+                        you know that the Button component will not be rendered when testing the Age.js file. This is known as <span>shallow rendering</span>. Shallow rendering 
+                        lets you render a component in isolation without have to worry about the behavior of child components.
+                    </p>
+                    <p className="TestingArticle__description">
+                        Shallow rendering is not a thing in "react-testing-library". When rendering a component, you will also render its children. 
+                        This can be very advantagous as you are almost never working with a component in isolation. Most components are in constant communication 
+                        with others.
+                    </p>
+                    <p className="TestingArticle__description">
+                        Lets actually observe what is rendered by destructuring out the <span>debug</span> method from render(). In your Age.test.js file, 
+                        write the following commands.
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code18} alt="" className="TestingArticle__code-img TestingArticle__code-img--smaller"/>
+                    </div>
+                    <p className="TestingArticle__description">
+                        Calling debug allows us to observe what is actually being rendered in our terminal.
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code19} alt="" className="TestingArticle__code-img TestingArticle__code-img--smallest"/>
+                    </div>
+                    <p className="TestingArticle__description">
+                        As you can see, the JSX of the button component is not omitted, but rather rendered along side the JSX from the Age component.
+                    </p>
+                    <p className="TestingArticle__description">
+                        Alright, enough of this shenanigans. Lets now test our Age component by doing exactly what we did when we tested our 
+                        Button component. Our current objective is to test whether clicking on the button increments the age within h1 in our 
+                        component.
+                    </p>
+                    <p className="TestingArticle__description">
+                        To do that, we need to add a data-testid to both the button tag in the Button component and the h1 tag in the Age component. 
+                        I will simply called mine, "button" and "header", respectively. After thats all done, we can write the following test:
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code20} alt="" className="TestingArticle__code-img"/>
+                    </div>
+                    <p className="TestingArticle__description">
+                        If you run that, you should see two passing tests. If thats what you got, well congradulations, you successful ran your first 
+                        integration test. Should we take a break for another calm and collected celebration?
+                    </p>
+                    <div className="TestingArticle__gif-container">
+                            <iframe className="TestingArticle__gif" src="https://giphy.com/embed/xeXEpUVvAxCV2" width="480" height="240" frameBorder="0"></iframe>
+                    </div>
+                    <h3 className="TestingArticle__subber-heading">
+                        Mock Functions
+                    </h3>
+                    <p className="TestingArticle__description">
+                        With our integration test above we can presume that all functions are running appropriately. However, to be diligent, that is 
+                        also something we can also test for. Lets ensure that incrementAge method, in our Age component, is being called when our button is
+                        clicked. Recall that incrementAge was passed onto Button as a prop.
+                    </p>
+                    <p className="TestingArticle__description">
+                        Hmmmmmm, that raises the question as to how we get access to that method in our Button.test.js file. Quick answer, we don't get 
+                        access to it. Instead, we mock it. See, in this situation, we don't care about what the function does, but rather whether, its 
+                        been called or not.
+                    </p>
+                    <p className="TestingArticle__description">
+                        To create a mock function, we simply do the following:
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code21} alt="" className="TestingArticle__code-img TestingArticle__code-img--smaller"/>
+                    </div>
+                    <p className="TestingArticle__description">
+                        We can now pass that mock function into our Button component as a prop and then test if it has been called.  
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code22} alt="" className="TestingArticle__code-img"/>
+                    </div>
+                    <p className="TestingArticle__description">
+                        In <span>line 4</span> we are testing if the incrementAge function that we created as a mock is being called one time 
+                        after a button click.
+                    </p>
+                    <h3 className="TestingArticle__subber-heading">
+                       Snapshot Testing
+                    </h3>
+                    <p className="TestingArticle__description">
+                        One last topic before we conclude the article. Let's say your happy with your component's code and thus want to ensure 
+                        that your UI doesn't change unexpectedly. You can do that by taking a snapshot of your file and then writing a test to check
+                        if your file matches that snapshot.
+                    </p>
+                    <p className="TestingArticle__description">
+                        This can be really helpful down the line when you are manipulating your files. You may unintentionally make a change to a 
+                        file that you didn't want to change. Without a snapshot test, you probably wouldn't detect this change until you notice something off 
+                        in your UI. However, with a snapshot test, you'll be able to detect it in development!
+                    </p>
+                    <p className="TestingArticle__description">
+                        We are currently very happy with our Age component's HTML structure and thus want to ensure that nothing about it changes.
+                        Lets write out our first snapshot test. To extract the HTML structure from our component we must destructure out something 
+                        called <span>container</span> from render().
+                    </p>
+                    <p className="TestingArticle__description">
+                        The container contains the HTML structure of our component. To access these HTML structure, on the container,
+                         we use the .firstChild method. This will access the upper most element and all its children elements.
+                    </p>
+                    <p className="TestingArticle__description">
+                        With all this said, we can finally write our snapshot test.
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code23} alt="" className="TestingArticle__code-img"/>
+                    </div>
+                    <p className="TestingArticle__description">
+                        The first time you run this test you should see a new folder in your __test__ folder called <span>__snapshot__</span>. 
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code25} alt="" className="TestingArticle__code-img TestingArticle__code-img--smaller"/>
+                    </div>
+                    <p className="TestingArticle__description">
+                        This folder is created automatically the first time you run the snapshot test. Inside it will be a <span>Age.test.js.snap</span> file,
+                        which contains a snapshot of the HTML structure of our component.
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code26} alt="" className="TestingArticle__code-img TestingArticle__code-img--smallest"/>
+                    </div>
+                    <p className="TestingArticle__description">
+                        From here on out, if we make any changes to our HTML structure, our snapshot test will fail.
+                    </p>
+                    <p className="TestingArticle__description">
+                        However, what if our changes were intentional. What do we do in that case? Do we have to manually change our Age.test.js.snap file?
+                        Thankfully, no we don't. Just run your test and after its completion, press "u" on your keyword to update your failing test.
+                    </p>
+                    <div className="TestingArticle__terminal-container">
+                        <img src={code27} alt="" className="TestingArticle__code-img "/>
+                    </div>
                 </div>
             </div>
         );
