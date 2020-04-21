@@ -529,6 +529,31 @@ class TestingArticle extends Component {
                     <div className="TestingArticle__terminal-container">
                         <img src={code27} alt="" className="TestingArticle__code-img "/>
                     </div>
+                    <h3 className="TestingArticle__sub-heading">
+                        Final Notes
+                    </h3>
+                    <p className="TestingArticle__description">
+                        If you've made it this far, much love! I hope you've found this article to be informative. Testing is definitely not the sexiest 
+                        topic in the world of computer science, but it is extremely inportant when building large scale applications. Since that's what
+                        all tech companies are basically doing, it defintely act as a resume booster and increase your chances of landing a job.
+                    </p>
+                    <p className="TestingArticle__description">
+                        If you want to learn more about testing, I definitely recommend taking a look at these resources:
+                    </p>
+                    <ul className="TestingArticle__list">
+                        <li className="TestingArticle__list-item">
+                            Brad Traversy's Jest Crash course
+                        </li>
+                        <li className="TestingArticle__list-item">
+                            Scott Tolinski's Reacting Testing for Beginners course
+                        </li>
+                        <li className="TestingArticle__list-item">
+                            Sandi Metz's 99 Bottles of OOP book
+                        </li>
+                    </ul>
+                    <p className="TestingArticle__description">
+                        Lastly, if you want to learn more about me (the author), just click on the following link.
+                    </p>
                 </div>
             </div>
         );
