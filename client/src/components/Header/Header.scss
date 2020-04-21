@@ -1,0 +1,65 @@
+.Header {
+    height: 110vh;
+    background-image: url("../../assets/wallpaper.png");
+    background-size: cover;
+    background-position: bottom;
+    padding-bottom: 10rem;
+    font-family: "Montserrat";
+    position: relative;
+
+    &__header-container {
+        top: 27.5%;
+        position: absolute;
+        left: 5%;
+        width: 47.5%
+    }
+
+    &__header {
+        color: rgb(236, 231, 231);
+        font-size: 3.5rem;
+        text-shadow: 0.1rem 0.5rem 1rem rgba(0, 0, 0, 0.589);
+
+        & span {
+            color: rgb(16, 156, 156)
+        };
+    }
+
+    &__description {
+        color: rgb(238, 230, 230);
+        font-size: 2rem;
+        width: 90%;
+        margin-top: 1rem;
+        line-height: 2.75rem;
+
+        & span {
+            color: rgb(226, 202, 66)
+        }
+    }
+
+    &__form {
+        margin-top: 3rem;
+        width: 90%;
+        display: flex;
+    }
+
+    &__input {
+        padding: 1.5rem;
+        width: 80%;
+        border-radius: 0.5rem 0 0 0.5rem;
+        border: none;
+        outline: none;
+        font-size: 1.5rem;
+    }
+
+    &__btn {
+        width: 20%;
+        cursor: pointer;
+        font-weight: 900;
+        background-color: rgb(22, 184, 184);
+        border: none;
+        letter-spacing: 0.1rem;
+        border-radius: 0 0.5rem 0.5rem 0;
+        outline: none;
+        color: rgb(15, 14, 14)
+    }
+}

@@ -56,6 +56,10 @@
         font-size: 1.9rem;
         margin-left: 2rem;
         margin-top: 0.75rem;
+
+        & span {
+            font-weight: 700;
+        }
     }
 
     &__img {
