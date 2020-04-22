@@ -13,11 +13,11 @@ export default class Footer extends Component {
                         Contact me with
                     </h3>
                     <div className="Footer__social-media-container">
-                        <a href="" className="Footer__social-media-link">
-                            <img src={linkedIn} alt="" className="Footer__social-icon"/>
+                        <a href="https://www.linkedin.com/in/laith-harb-b23267146/" className="Footer__social-media-link">
+                            <img src={linkedIn} alt="linkedin-icon" className="Footer__social-icon"/>
                         </a>
-                        <a href="" className="Footer__social-media-link">
-                            <img src={github} alt="" className="Footer__social-icon"/>
+                        <a href="https://github.com/harblaith7" className="Footer__social-media-link">
+                            <img src={github} alt="github-icon" className="Footer__social-icon"/>
                         </a>
                         <a href="" className="Footer__social-media-link">
                             <img src={google} alt="" className="Footer__social-icon"/>

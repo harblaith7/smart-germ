@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "./Article.scss"
-import {Link} from "react-router-dom"
+import { HashLink as Link } from 'react-router-hash-link';
 
 export default class Article extends Component {
 
@@ -23,7 +23,7 @@ export default class Article extends Component {
                     description: "Learn how to implement all the important sorting algorithms",
                     thumbnail: "https://i.imgur.com/SbMGmW4.gif",
                     author: "Laith Harb",
-                    publishedDate: "not published",
+                    publishedDate: "coming soon",
                     isPublished: false,
                     id: "dsfsa43q21gs",
                     path: "sorting-algorithms"
@@ -33,17 +33,17 @@ export default class Article extends Component {
                     description: "Truly understand the implementation of binary search trees",
                     thumbnail: "https://miro.medium.com/max/1200/1*-wjb7nJPsfO7K1aPMYg90A.png",
                     author: "Laith Harb",
-                    publishedDate: "not published",
+                    publishedDate: "coming soon",
                     isPublished: false,
                     id: "dsfsa43q21gs",
                     path: "binary-search-trees"
                 },
                 {
                     name: "Authentication with GraphQL",
-                    description: "Learn how to authenticate a user with GraphQL and Apollo",
+                    description: "Learn how to authenticate a user with GraphQL and Prisma",
                     thumbnail: "https://miro.medium.com/max/2560/1*cmtyFQ6veY6uS7jUzEiqNQ.png",
                     author: "Laith Harb",
-                    publishedDate: "not published",
+                    publishedDate: "coming soon",
                     isPublished: false,
                     id: "dsfsa43q21gs",
                     path: "authentication-with-graphql"
@@ -53,7 +53,7 @@ export default class Article extends Component {
                     description: "The big O notation is probably one of the most important concepts in CS to learn",
                     thumbnail: "https://danielmiessler.com/images/big-o-chart-tutorial-bazar-aymptotic-notations-1.png",
                     author: "Laith Harb",
-                    publishedDate: "not published",
+                    publishedDate: "coming soon",
                     isPublished: false,
                     id: "dsfsa43q21gs",
                     path: "big-o-notion"
@@ -63,7 +63,7 @@ export default class Article extends Component {
                     description: "Learn how Google maps really works by learning graphs and shortest path algorithms.",
                     thumbnail: "https://miro.medium.com/max/2560/1*dtmsuTMqRvYzkUCS25tLDA.jpeg",
                     author: "Laith Harb",
-                    publishedDate: "not published",
+                    publishedDate: "coming soon",
                     isPublished: false,
                     id: "dsfsa43q21gs",
                     path: "graphs-dijkstra-algorithm"
@@ -76,7 +76,7 @@ export default class Article extends Component {
     displayCourseCards = () => {
         return this.state.courses.map(course => {
             return (
-                <Link to={`/course/${course.path}`} className={`Article__card-container ${!course.isPublished && "Article__card-container--disabled"}`}>
+                <Link to={`/course/${course.path}#${course.path}`} className={`Article__card-container ${!course.isPublished && "Article__card-container--disabled"}`}>
                     <img src={course.thumbnail} alt="" className="Article__card-img"/>
                     <h4 className="Article__card-title">{course.name}</h4>
                     <p className="Article__card-description">

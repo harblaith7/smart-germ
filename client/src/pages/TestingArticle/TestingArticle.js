@@ -34,7 +34,7 @@ import code27 from "../../assets/code-27.png"
 class TestingArticle extends Component {
     render() {
         return (
-            <div className="TestingArticle">
+            <div className="TestingArticle" id="react-testing">
                 <div className="TestingArticle__container">
                     <h1 className="TestingArticle__heading">
                         Testing in React
