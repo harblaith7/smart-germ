@@ -1,3 +1,5 @@
+@import "../../sass/mixins.scss";
+
 .TestingArticle {
 
     font-family: "Montserrat";
@@ -136,4 +138,78 @@
 
 .lighter-blue {
     color: rgb(80, 161, 199)
+}
+
+
+@include width-1000px {
+    .TestingArticle {
+        &__code-img {
+            width: 70%;
+    
+            &--smaller {
+                width: 50%
+            }
+    
+            &--smallest {
+                width: 40%
+            }
+        }
+    }
+}
+
+@include width-850px {
+    .TestingArticle {
+        &__code-img {
+            width: 90%;
+    
+            &--smaller {
+                width: 60%
+            }
+    
+            &--smallest {
+                width: 50%
+            }
+        }
+        &__image-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__img {
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+        &__container {
+
+            width: 85%;
+          
+            
+        }
+    }
+}
+
+@include width-600px {
+    .TestingArticle {
+        &__code-img {
+            width: 100%;
+    
+            &--smaller {
+                width: 100%
+            }
+    
+            &--smallest {
+                width: 100%
+            }
+        }
+    }
+}
+
+@include width-400px {
+    .TestingArticle {
+        &__description {
+            font-size: 1.75rem;
+        }
+
+       
+    }
 }

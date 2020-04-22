@@ -28,6 +28,12 @@
     }
 };
 
+@mixin width-1000px {
+    @media (max-width: 1000px){
+        @content
+    }
+};
+
 @mixin width-950px {
     @media (max-width: 950px){
         @content
