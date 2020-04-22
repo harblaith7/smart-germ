@@ -1,26 +1,28 @@
+@import "../../sass/variables.scss";
+
 .Header {
-    height: 110vh;
+    height: 120vh;
     background-image: url("../../assets/wallpaper.png");
-    background-size: cover;
+
     background-position: bottom;
     padding-bottom: 10rem;
     font-family: "Montserrat";
     position: relative;
 
     &__header-container {
-        top: 27.5%;
+        top: 20%;
         position: absolute;
         left: 5%;
         width: 47.5%
     }
 
     &__header {
-        color: rgb(236, 231, 231);
+        color: $off-white;
         font-size: 3.5rem;
         text-shadow: 0.1rem 0.5rem 1rem rgba(0, 0, 0, 0.589);
 
         & span {
-            color: rgb(16, 156, 156)
+            color: $primary-color
         };
     }
 
@@ -32,7 +34,7 @@
         line-height: 2.75rem;
 
         & span {
-            color: rgb(226, 202, 66)
+            color: $secondary-color
         }
     }
 
@@ -55,11 +57,60 @@
         width: 20%;
         cursor: pointer;
         font-weight: 900;
-        background-color: rgb(22, 184, 184);
+        background-color: $primary-color;
         border: none;
         letter-spacing: 0.1rem;
         border-radius: 0 0.5rem 0.5rem 0;
         outline: none;
-        color: rgb(15, 14, 14)
+        color: $off-black
+    }
+
+    &__contents-container {
+        position: absolute;
+        width: 85%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        height: 32.5rem;
+        display: flex;
+        justify-content: space-around;
+        font-family: "Source Code Pro";
+    }
+
+    &__content-container {
+        width: 45%;
+        height: 90%;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0.2rem 0.2rem 1rem $transparent-black;
+        padding: 1.5rem;
+        text-align: center;
+
+        &--black {
+            background-color: $off-black;
+        }
+    }
+
+    &__content-header {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.25rem;
+
+        &--white {
+            color: $off-white
+        }
+    }
+
+    &__content-description {
+        font-size: 1.75rem;
+        margin: 0 auto;
+        margin-top: 2.5rem;
+        width: 85%;
+        font-weight: 600;
+
+        &--white {
+            color: $off-white
+        }
     }
 }

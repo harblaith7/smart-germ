@@ -20,6 +20,30 @@ export default class Header extends Component {
                             <button className="Header__btn">Search</button>
                         </form>
                     </div>
+                    <div className="Header__contents-container">
+                        <div className="Header__content-container">
+                            <h4 className="Header__content-header">
+                                Web Development
+                            </h4>
+                            <p className="Header__content-description">
+                                Web Development is really fun, but some concepts can be confusing.
+                                To aid you, we have comprehensive articles relating to all facets
+                                of web dev. Front-end, back-end, databases, testing, project architecture you name it, 
+                                we got it!
+                            </p>
+                        </div>
+                        <div className="Header__content-container  Header__content-container--black">
+                            <h4 className="Header__content-header Header__content-header--white">
+                                Algorithms & Data Structures
+                            </h4>
+                            <p className="Header__content-description Header__content-description--white">
+                                This is usually the doom of a programmer's existents. However, understanding 
+                                algorithms and data structures are extremely important for those dreaded technical 
+                                interviews. We try to make your life easier by providing you with comprehensive 
+                                articles about these topics.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
