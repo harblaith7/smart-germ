@@ -28,7 +28,7 @@ export default class Header extends Component {
                             <p className="Header__content-description">
                                 Web Development is really fun, but some concepts can be confusing.
                                 To aid you, we have comprehensive articles relating to all facets
-                                of web dev. Front-end, back-end, databases, testing, project architecture you name it, 
+                                of web development. Front-end, back-end, databases, testing, project architecture you name it, 
                                 we got it!
                             </p>
                         </div>
@@ -38,7 +38,7 @@ export default class Header extends Component {
                             </h4>
                             <p className="Header__content-description Header__content-description--white">
                                 This is usually the doom of a programmer's existents. However, understanding 
-                                algorithms and data structures are extremely important for those dreaded technical 
+                                algorithms and data structures is extremely important for those dreaded technical 
                                 interviews. We try to make your life easier by providing you with comprehensive 
                                 articles about these topics.
                             </p>
