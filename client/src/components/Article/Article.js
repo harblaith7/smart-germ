@@ -97,7 +97,7 @@ export default class Article extends Component {
 
     render() {
         return (
-            <div className="Article">
+            <div className="Article" id="article">
                 <div className="Article__container">
                     <h2 className="Article__heading">
                         Popular Articles
