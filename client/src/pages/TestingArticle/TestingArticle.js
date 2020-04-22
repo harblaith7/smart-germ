@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Nav from "../../components/Nav/Nav"
 import "./TestingArticle.scss"
+import { HashLink as Link } from 'react-router-hash-link';
 import enzyme from "../../assets/enzyme.png"
 import reactTestingLibrary from "../../assets/react-testing-library.png"
 import jest from "../../assets/jest.png"
@@ -555,7 +556,7 @@ class TestingArticle extends Component {
                     </ul>
                     <p className="TestingArticle__description">
                         Lastly, if you want to learn more about <span>me</span>, the absolutely wonderful, handsome, generous, selfless, intelligent, driven,
-                        passionate, and caring author of this article, just click on the following link. But you don't have too, I'm very humble and won't take it personally.
+                        passionate, and caring author of this article, just click on the following <Link to="/#home">link</Link>. But you don't have too, I'm very humble and won't take it personally.
                     </p>
                 </div>
             </div>

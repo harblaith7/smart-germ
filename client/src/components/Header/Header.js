@@ -5,7 +5,7 @@ import Nav from "../Nav/Nav"
 export default class Header extends Component {
     render() {
         return (
-            <div className="Header">
+            <div className="Header" id="home">
                 <Nav/>
                 <div className="Header__container">
                     <div className="Header__header-container">
