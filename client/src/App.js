@@ -3,6 +3,7 @@ import TestingArticle from "./pages/TestingArticle/TestingArticle"
 import LandingPage from "./pages/LandingPage/LandingPage"
 import {BrowserRouter, Route, Switch} from "react-router-dom"
 
+
 class App extends Component {
   render() {
     return (

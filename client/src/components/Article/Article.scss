@@ -1,9 +1,10 @@
 @import "../../sass/variables.scss";
 
 .Article {
-    height: 100vh;
+    height: auto;
     padding-top: 15rem;
     font-family: "Montserrat";
+    padding-bottom: 10rem;
 
     &__container {
 
@@ -16,7 +17,6 @@
     }
 
     &__articles-container {
-        height: 45rem;
         width: 75%;
         margin: 0 auto;
         margin-top: 10rem;
