@@ -1,4 +1,5 @@
 @import "../../sass/variables.scss";
+@import "../../sass/mixins.scss";
 
 .Article {
     height: auto;
@@ -36,7 +37,7 @@
         padding: 0.25rem;
         cursor: pointer;
         margin-bottom: 5rem;
-        margin-right: 3rem;
+        margin-right: 5rem;
         text-decoration: none;
 
         &--disabled {
@@ -79,5 +80,90 @@
     &__card-data {
         font-size: 1.25rem;
         margin-right: 2.5rem;
+    }
+}
+
+@include width-1350px {
+    .Article {
+        &__card-container {
+            width: 40rem;
+            
+        }
+    }
+}
+
+@include width-1200px {
+    .Article {
+        &__card-container {
+            width: 35rem;
+            
+        }
+    }
+}
+
+@include width-1200px {
+    .Article {
+        &__card-container {
+            width: 40rem;
+            margin-right: 0;
+        }
+        
+    &__articles-container {
+        justify-content: center;
+        
+        }
+    }
+}
+
+@include width-800px {
+    .Article {
+        padding-top: 25rem;
+    }
+}
+
+
+@include width-700px {
+    .Article {
+        padding-top: 30rem;
+    }
+}
+
+@include width-600px {
+    .Article {
+        padding-top: 40rem;
+
+        &__heading {
+            font-size: 4rem;
+        }
+    }
+}
+
+@include width-500px {
+    .Article {
+        padding-top: 60rem;
+
+        &__heading {
+            font-size: 4rem;
+        }
+    }
+}
+
+@include width-450px {
+    .Article {
+        padding-top: 70rem;
+
+        &__heading {
+            font-size: 3rem;
+        }
+    }
+}
+
+@include width-400px {
+    .Article {
+        padding-top: 90rem;
+
+        &__heading {
+            font-size: 2.75rem;
+        }
     }
 }
