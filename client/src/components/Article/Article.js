@@ -29,9 +29,9 @@ export default class Article extends Component {
                     path: "sorting-algorithms"
                 },
                 {
-                    name: "Binary Search Trees",
-                    description: "Truly understand the implementation of binary search trees",
-                    thumbnail: "https://miro.medium.com/max/1200/1*-wjb7nJPsfO7K1aPMYg90A.png",
+                    name: "Docker & Kubernetes",
+                    description: "Learn how to containerize your applications with docker & kubernetes",
+                    thumbnail: "https://www.threatstack.com/wp-content/uploads/2017/06/docker-cloud-twitter-card.png",
                     author: "Laith Harb",
                     publishedDate: "coming soon",
                     isPublished: false,

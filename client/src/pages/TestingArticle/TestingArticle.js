@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Nav from "../../components/Nav/Nav"
 import "./TestingArticle.scss"
 import enzyme from "../../assets/enzyme.png"
 import reactTestingLibrary from "../../assets/react-testing-library.png"
@@ -35,6 +36,7 @@ class TestingArticle extends Component {
     render() {
         return (
             <div className="TestingArticle" id="react-testing">
+                <Nav/>
                 <div className="TestingArticle__container">
                     <h1 className="TestingArticle__heading">
                         Testing in React

@@ -1,0 +1,13 @@
+.Nav {
+    height: 10.5vh;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+
+    &__logo {
+        width: 25rem;
+        margin-left: 2.5rem;
+        cursor: pointer;
+    }
+}

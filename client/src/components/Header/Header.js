@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import "./Header.scss"
+import Nav from "../Nav/Nav"
 
 export default class Header extends Component {
     render() {
         return (
             <div className="Header">
+                <Nav/>
                 <div className="Header__container">
                     <div className="Header__header-container">
                         <h1 className="Header__header">
