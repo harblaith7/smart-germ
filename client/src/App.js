@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TestingArticle from "./pages/TestingArticle/TestingArticle"
+import BigONotation from "./pages/BigONotation/BigONotation"
 import LandingPage from "./pages/LandingPage/LandingPage"
 import {BrowserRouter, Route, Switch} from "react-router-dom"
 import Footer from "../src/components/Footer/Footer"
@@ -11,6 +12,7 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route path="/course/react-testing" component={TestingArticle}/>
+          <Route path="/course/big-o-notation" component={BigONotation}/>
           <Route path="/" component={LandingPage}/>
         </Switch>
         <Footer/>

@@ -54,9 +54,9 @@ export default class Article extends Component {
                     thumbnail: "https://danielmiessler.com/images/big-o-chart-tutorial-bazar-aymptotic-notations-1.png",
                     author: "Laith Harb",
                     publishedDate: "coming soon",
-                    isPublished: false,
+                    isPublished: true,
                     id: "dsfsa43q21gs",
-                    path: "big-o-notion"
+                    path: "big-o-notation"
                 },
                 {
                     name: "Graphs & Dijkstra Algorithm",
