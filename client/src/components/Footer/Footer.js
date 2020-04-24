@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import "./Footer.scss"
 import linkedIn from "../../assets/linkedin.svg"
-import google from "../../assets/google.svg"
+import portfolio from "../../assets/monitor.svg"
 import github from "../../assets/github.svg"
 
 export default class Footer extends Component {
@@ -19,8 +19,8 @@ export default class Footer extends Component {
                         <a href="https://github.com/harblaith7" className="Footer__social-media-link">
                             <img src={github} alt="github-icon" className="Footer__social-icon"/>
                         </a>
-                        <a href="" className="Footer__social-media-link">
-                            <img src={google} alt="" className="Footer__social-icon"/>
+                        <a href="https://laithharb.com/" className="Footer__social-media-link">
+                            <img src={portfolio} alt="" className="Footer__social-icon"/>
                         </a>
                     </div>
                 </div>

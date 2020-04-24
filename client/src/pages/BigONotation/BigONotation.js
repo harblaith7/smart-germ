@@ -6,9 +6,19 @@ import code1 from "../../assets/big-o/code-1.png"
 import code2 from "../../assets/big-o/code-2.png"
 import code3 from "../../assets/big-o/code-3.png"
 import code4 from "../../assets/big-o/code-4.png"
+import code5 from "../../assets/big-o/code-5.png"
+import code6 from "../../assets/big-o/code-6.png"
+import code7 from "../../assets/big-o/code-7.png"
+import code8 from "../../assets/big-o/code-8.png"
+import code9 from "../../assets/big-o/code-9.png"
 
 import graph1 from "../../assets/big-o/graph-1.png"
 import graph2 from "../../assets/big-o/graph-2.png"
+import graph3 from "../../assets/big-o/graph-3.png"
+import graph4 from "../../assets/big-o/graph-4.png"
+import graph5 from "../../assets/big-o/graph-5.png"
+import graph6 from "../../assets/big-o/graph-6.png"
+import graph7 from "../../assets/big-o/graph-7.png"
 
 export default class BigONotation extends Component {
     render() {
@@ -30,7 +40,7 @@ export default class BigONotation extends Component {
                     
                     <p className="BigONotation__description">
                         <span>No</span>, there really isn't. But that's not true if we talk about <span>functions</span> in programming. In most cases, there is a best function
-                        and fortunately, we do have a formula we can use find it.
+                        and fortunately, we do have a formula we can use find them.
                     </p>
                     <p className="BigONotation__description">
                         To illustrate this, let's write two functions that do the same thing, but in different ways. Then we can try to figure which function is superior.
@@ -122,13 +132,7 @@ export default class BigONotation extends Component {
                             O(2^n)
                         </li>
                         <li className="BigONotation__list-item">
-                            O(n!)
-                        </li>
-                        <li className="BigONotation__list-item">
                             O(log n)
-                        </li>
-                        <li className="BigONotation__list-item">
-                            O(n log n)
                         </li>
                     </ul>
                     <p className="BigONotation__description">
@@ -137,7 +141,7 @@ export default class BigONotation extends Component {
                         is <span>not</span> indicative of how good the operation is. If you are curious however, here a great graph by <a href="https://www.bigocheatsheet.com/">Big-O Cheat Sheet</a> that showcases 
                         the idealness of an operation.
                     </p>
-                    <div className="BigONotation__terminal-container">
+                    <div className="BigONotation__terminal-container" id="graph">
                         <img src={graph2} alt="" className="BigONotation__code-img"/>
                     </div>
                     <h3 className="BigONotation__sub-heading">
@@ -201,8 +205,317 @@ export default class BigONotation extends Component {
                     <h3 className="BigONotation__sub-heading">
                         O(2^n)
                     </h3>
+                    <p className="BigONotation__description">
+                        Before you read this section I have to issue a warning. This section will cover some of the more advanced concepts in the world of computer science.
+                        I will try to explain them as clearly as possible, but if you aren't already familiar with these topics, initial confusion is commonplace.
+                        I suggest rereading this part a few times and/or researching the topic on the internet to gain a better understanding.
+                    </p>
+                    <p className="BigONotation__description">
+                        Alright, ready to carry on?
+                    </p>
+                    <div className="TestingArticle__gif-container">
+                        <iframe className="TestingArticle__gif" src="https://giphy.com/embed/a93jwI0wkWTQs" width="480" height="240" frameBorder="0"></iframe>
+                    </div>
+                    <p className="BigONotation__description">
+                        If you check out the <a href="#graph">graph</a> above, you'll notice that <span>O(2^n)</span> follows a similar tragectory as O(n^2), except O(2^n) is worse. In fact it's far worse!
+                    </p>
+                    <p className="BigONotation__description">
+                        An algorithm with a time complexity of O(2^n) has a runtime that is proportional to 2 to the power of n. Therefore, if n was 5, the runtime 
+                        would be 32, whereas if n was 6, the runtime would be 64. That is a dramatic increase! Simply increasing n by 1 results in a <span>doubled </span> runtime.
+                    </p>
+                    <p className="BigONotation__description">
+                        Okay, now we are going to write out a function that has this time complexity. This function's job is to return the nth (last) value of 
+                        the <span>fibonacci sequence</span>.
+                    </p>
+                    <p className="BigONotation__description">
+                        The fibonacci sequence is a sequence of numbers where the next number is found by adding up the two numbers before it.
+                    </p>
+                    <div className="BigONotation__terminal-container">
+                        <p className="BigONotation__terminal-code">
+                            0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+                        </p>
+                    </div>
+                    <p className="BigONotation__description">
+                        If n is equal to 4 then the function should return 3
+                    </p>
+                    <div className="BigONotation__terminal-container">
+                        <p className="BigONotation__terminal-code">
+                            0, 1, 1, 2, <span className="yellow">3</span>, 5, 8, 13, 21, 34
+                        </p>
+                    </div>
+                    <p className="BigONotation__description">
+                        If n is equal to 8 then the function should return 21
+                    </p>
+                    <div className="BigONotation__terminal-container">
+                        <p className="BigONotation__terminal-code">
+                            0, 1, 1, 2, 3, 5, 8, 13, <span className="yellow">21</span>, 34
+                        </p>
+                    </div>
+                    <p className="BigONotation__description">
+                        I'm sure you can probably think of countless ways of solving this problem without having its time complixity be O(2^n), but 
+                        let's imagine that our interviewer wants us to solve it <span>recursively</span>.
+                    </p>
+                    <h3 className="BigONotation__subber-heading">
+                        Recursion
+                    </h3>
+                    <p className="BigONotation__description">
+                        Let's take a quick side note and explain what recursion is exactly. If you already know what it is, feel free to skip this section.
+                    </p>
+                    <p className="BigONotation__description">
+                        <span>Recursion</span>, to put it very simply, is a function that <span>calls itself</span> over and over again until a specific condition is met.
+                        Creating a function that returns the factorial of the parameter provided is a common example when trying to first explain recursion.
+                    </p>
+                    <p className="BigONotation__description">
+                        To do this in a non-recursive manner, we can do the following:
+                    </p>
+                    <div className="BigONotation__terminal-container">
+                        <img src={code5} alt="" className="BigONotation__code-img BigONotation__code-img--smaller"/>
+                    </div>
+                    <p className="BigONotation__description">
+                        To do so recursively however, we do the following:
+                    </p>
+                    <div className="BigONotation__terminal-container">
+                        <img src={code6} alt="" className="BigONotation__code-img BigONotation__code-img--smaller"/>
+                    </div>
+                    <p className="BigONotation__description">
+                        At first glance, this function may seem deceivingly simple, but what is going on is actually pretty complicated.
+                    </p>
+                    <p className="BigONotation__description">
+                        Let's break it down one step at a time. First of all, all recursive functions must have something called a 
+                        <span> base case</span>. The base case is a specific condition that stops the function from 
+                        calling itself over again when it is met. Instead it returns a specified value. Without the base case, the 
+                        function will enter an infinite loop.
+                    </p>
+                    <p className="BigONotation__description">
+                        In our case, the <span>base case</span> is whenever num is equal to one. In that case, we end up returning 1.
+                    </p>
+                    <p className="BigONotation__description">
+                        Let's now see what happens when our base case is not met. If our base case is not met, we end up returning 
+                        whatever num is multiplied by whatever is returned by the factorial function itself, but with num - 1 passed in as 
+                        the parameter.
+                    </p>
+                    <p className="BigONotation__description">
+                        To understand what's really going on here, let's take a look at a quick diagram illustrating the recursive process
+                        of this function when num is equal to 4.
+                    </p>
+                    <div className="BigONotation__terminal-container">
+                        <img src={graph3} alt="" className="BigONotation__code-img BigONotation__code-img--smaller"/>
+                    </div>
+                    <p className="BigONotation__description">
+                        When num is equal to 4, the first thing our function does is check its base case. Since the condition is not met, 
+                        it moves onto the next line of code, in which it returns 4 multiplied by the return value of <span>factorial(4-1)</span>.
+                        Now the function will go through the same steps, but with paramater equal to 3 and then again, but with 2. Eventually, 
+                        num becomes equal to 1, in which we only return 1 and do not call the function again.
+                    </p>
+                    <p className="BigONotation__description">
+                        If you look at the green circle in the diagram above, you'll see that we are returning all the numbers between num and 1, 
+                        and then multiplying them all together. Therefore we end up with <span>4 * 3 * 2 * 1</span>, which is equivalent to <span>4!</span>.
+                    </p>
+                    <h3 className="BigONotation__subber-heading">
+                        Back to Fibonacci
+                    </h3>
+                    <p className="BigONotation__description">
+                        Okay, now that we understand a little bit about recursion, let's write out the recursive solution to the fibonacci problem:
+                    </p>
+                    <div className="BigONotation__terminal-container">
+                        <img src={code7} alt="" className="BigONotation__code-img BigONotation__code-img--smaller"/>
+                    </div>
+                    <p className="BigONotation__description">
+                        Again, it looks deceivingly simple, but what is really going on is quite complex. Let's dive straight into a diagram 
+                        to better understand it.
+                    </p>
+                    <p className="BigONotation__description">
+                        The diagram below illustrates what happens when n is equal to 3:
+                    </p>
+                    <div className="BigONotation__terminal-container">
+                        <img src={graph4} alt="" className="BigONotation__code-img BigONotation__code-img--smaller"/>
+                    </div>
+                    <p className="BigONotation__description">
+                        In this case, we are going to continuously call the fibonacci function until n is either equal to 1 or 0.
+                        All the returned 1's and 0's will then be added together to give us a final answer of 2.
+                    </p>
+                    <p className="BigONotation__description">
+                        If we look at our fibonacci series, we will indeed see that the third index has a value of 2.
+                    </p>
+                    <div className="BigONotation__terminal-container">
+                        <p className="BigONotation__terminal-code">
+                            0, 1, 1, <span className="yellow">2</span>, 3, 5, 8, 13, 21, 34
+                        </p>
+                    </div>
+                    <p className="BigONotation__description">
+                        Okay, now let's see what happens when we increase n to 4:
+                    </p>
+                    <div className="BigONotation__terminal-container">
+                        <img src={graph5} alt="" className="BigONotation__code-img"/>
+                    </div>
+                    <div className="BigONotation__terminal-container">
+                        <p className="BigONotation__terminal-code">
+                            0, 1, 1, 2, <span className="yellow">3</span>, 5, 8, 13, 21, 34
+                        </p>
+                    </div>
+                    <p className="BigONotation__description">
+                        Wow! Simply increasing n by 1 almost <span>doubled</span> the amount of times we run the fibonacci function.
+                    </p>
+                    <p className="BigONotation__description">
+                        This is thus an example of <span>O(2^n)</span>. Increasing n results in a doubled runtime.
+                        This is really inefficient, and outside an interview setting, you will probably never do something like this.
+                    </p>
+                    <p className="BigONotation__description">
+                        Let's say our interviewer notes this and asks us to refactor our function in order to increase 
+                        its efficiency. However, she still want you to keep the recursive nature of the function.
+                    </p>
+                    <p className="BigONotation__description">
+                        It's super tricky to solve, but it can be done with <span>memoization</span>
+                    </p>
+                    <h3 className="BigONotation__subber-heading">
+                        Memoization
+                    </h3>
+                    <p className="BigONotation__description">
+                        If you're really observent, you may have noticed that the diagram from fib(3) is actually an exact replica 
+                        of fib(4)'s left branch.
+                    </p>
+                    <p className="BigONotation__description">
+                        What if instead of going through all these steps over and over again each time we call the function, we instead
+                        save the outcome we get from a specific parameter the first go-round, and then for subsequent iterations with that
+                        parameter, we simply just return that saved value.
+                    </p>
+                    <p className="BigONotation__description">
+                        For example, if we are running fib(4) and have the return value of fib(3) saved, we can completely omit the left side 
+                        of the branch and just return 2
+                    </p>
+                    <p className="BigONotation__description">
+                        That is <span>memoization</span> in a nutshell.
+                    </p>
+                    <p className="BigONotation__description">
+                        Memoization is the process of storing the results of expensive function calls and returning the cached result when 
+                        the same inputs occur again.
+                    </p>
+                    <p className="BigONotation__description">
+                        This is how it works. We create a memoization function that takes in the slow function as the first parameter
+                        and returns the fast function with the cached results.
+                    </p>
+                    <p className="BigONotation__description">
+                        Here is our memoize function:
+                    </p>
+                    <div className="BigONotation__terminal-container">
+                        <img src={code8} alt="" className="BigONotation__code-img BigONotation__code-img--smaller"/>
+                    </div>
+                    <p className="BigONotation__description">
+                        Our memoize function will cache all the expected outcomes the first run through and then return 
+                        those outcomes for subsequent iterations.
+                    </p>
+                    <p className="BigONotation__description">
+                        We can now use our memoize function to create our faster function.
+                    </p>
+                    <div className="BigONotation__terminal-container">
+                        <img src={code9} alt="" className="BigONotation__code-img BigONotation__code-img--smaller"/>
+                    </div>
+                    <h3 className="BigONotation__sub-heading">
+                        O(log n)
+                    </h3>
+                    <p className="BigONotation__description">
+                        Take a look at the <a href="#graph">graph</a> above again so you can observe how amazing a time complexity 
+                        of <span>O(log n)</span> is. It's nearly identical to <span>O(1)</span>, which is constant time.
+                    </p>
+                    <p className="BigONotation__description">
+                        For this section, because O(log n) is already so perfect, we aren't going to write a function and then 
+                        attempt to refactor it. Instead, we will go through a every common example that takes
+                        advantage of this operation.
+                    </p>
+                    <p className="BigONotation__description">
+                        Okay, say you have the following array of numbers:
+                    </p>
+                    <div className="BigONotation__terminal-container">
+                        <p className="BigONotation__terminal-code">
+                            [1, 3, 8, 10, 7, 4, 6, 10, 13, 14]
+                        </p>
+                    </div>
+                    <p className="BigONotation__description">
+                        and we were asked to write a function the searches if it contains a specified number.
+                    </p>
+                    <p className="BigONotation__description">
+                        To do this, we are going to have to iterate through each element in the array until we find a match.
+                        That's a time complexity of <span>O(n)</span>. A time complexity of O(n) is generally pretty good, 
+                        but in this case, we can improve on it.
+                    </p>
+                    <p className="BigONotation__description">
+                        How about instead of organizing our data as elements in an array, we organize them as nodes in a <span>tree</span>.
+                        Specifically, we are going to organize them into a <span>binary search tree</span>.
+                    </p>
+                    <p className="BigONotation__description">
+                        A binary search tree is a type of data structure that consists of a <span>root node</span> with multiple branching nodes. 
+                        The <span>left</span> branch of each parent node will always contain children nodes with <span>smaller</span> values, 
+                        while the <span>right</span> branch of each parent node will always contain children nodes with <span>larger</span> values.
+                    </p>
+                    <p className="BigONotation__description">
+                        This is how our data would look like as a binary search tree:
+                    </p>
+                    <div className="BigONotation__terminal-container">
+                        <img src={graph6} alt="" className="BigONotation__code-img BigONotation__code-img--smaller"/>
+                    </div>
+                    <p className="BigONotation__description">
+                        Let's compare and contrast both these data structures. Let's say we are told to find out if 4 exists in
+                        our data. 
+                    </p>
+                    <p className="BigONotation__description">
+                        With our array, we have to traverse each element until find the number of 4. In the case of our array, we 
+                        end up traversing through 5 elements before reaching 4. If however, 4 was at the end of our array or if it's
+                        non-existant in our array, we would have to traverse through every element.
+                    </p>
+                    <p className="BigONotation__description">
+                        Thankfully, with a binary search tree, we don't have to do that. See when we are at a specific node we first 
+                        check if that value is equal to 4. If it is, yippee hooray, we found our node, but if it isn't, then we would
+                        move onto either the left or right branch depending on of our target and the current node we are iterating.
+                    </p>
+                    <p className="BigONotation__description">
+                        For our example, we would start at the root node and check if our target is equal to 8. 4 !== 8, so now we check
+                        if our target is smaller or larger than the value of the root. In this case it's smaller, so we will move onto 
+                        the next node to the left.
+                    </p>
+                    <p className="BigONotation__description">
+                        Notice how now we are completely omitting anything to the right of 8, because there is no way 4 can be found there.
+                        This way are effectively cutting out data set in half for every iteration.
+                    </p>
+                    <p className="BigONotation__description">
+                        If we keep progressing this way, we will just needed 3 iterations to reach the node with a value of 4, despite it 
+                        begin located way in the bottom.
+                    </p>
+                    <p className="BigONotation__description">
+                        Because we are cutting our data in half for every iteration, our <span>runtime / n</span> graph would look something like this:
+                    </p>
+                    <div className="BigONotation__terminal-container">
+                        <img src={graph7} alt="" className="BigONotation__code-img BigONotation__code-img--smaller"/>
+                    </div>
+                    <p className="BigONotation__description">
+                        If you are a mathematic wiz, you'll probably notice that the graph follows a <span>log n </span> trajectory. 
+                        Therefore, our binary search tree has an operation of <span>O(log n)</span>, which is absolutely amazing!
+                    </p>
+                    <h3 className="BigONotation__sub-heading">
+                        Final Remarks
+                    </h3>
+                    <p className="BigONotation__description">
+                        If you've made it this far, thank you very much friend! The Big O Notation is a fundamental concept in the world of computer science 
+                        that every programmer should be aware of. I hope this article sheads some light on what exactly the Big O Notation refers 
+                        too and how to use it to optimize your application.
+                    </p>
+                    <p className="BigONotation__description">
+                        If you want to learn more about this I suggest taking a look at following resources:
+                    </p>
+                    <ul className="BigONotation__list">
+                        <li className="BigONotation__list-item">
+                            Colt Steele's <span>Algorithms and Data Structures Masterclass</span> on Udemy
+                        </li>
+                        <li className="BigONotation__list-item">
+                            Stephen Grider's <span>Coding Interview Bootcamp</span> on Udemy
+                        </li>
+                    </ul>
+                    <p className="BigONotation__description">
+                        Lastly, if you want to learn more about the wonderful soul that sacrifices his time and energy to writing 
+                        comprehensive computer science articles for <span>your</span> benefit, click on this <a href="">link</a>.
+                    </p>
                 </div>
             </div>
         )
     }
 }
+
