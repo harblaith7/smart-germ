@@ -335,7 +335,7 @@ class TestingArticle extends Component {
                     </p>
                     <p className="TestingArticle__description">
                         In <span>line 3</span> we are now utilizing the expect keyword we used previously with Jest. This line is the true test. 
-                        Here we are testing if the text content inside the element with data-testid of "button" (our button) has 
+                        Here we are testing if the element with data-testid of "button" (our button) has 
                         the text content of "1". 
                     </p>
                     <p className="TestingArticle__description">
