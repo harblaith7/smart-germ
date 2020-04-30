@@ -39,21 +39,21 @@ export default class Article extends Component {
                     path: "binary-search-trees"
                 },
                 {
-                    name: "Authentication with GraphQL",
-                    description: "Learn how to authenticate a user with GraphQL and Prisma",
+                    name: "GraphQL",
+                    description: "Learn GraphQL by building a full-stack calorie application",
                     thumbnail: "https://miro.medium.com/max/2560/1*cmtyFQ6veY6uS7jUzEiqNQ.png",
                     author: "Laith Harb",
                     publishedDate: "coming soon",
-                    isPublished: false,
+                    isPublished: true,
                     id: "dsfsa43q21gs",
-                    path: "authentication-with-graphql"
+                    path: "graphql"
                 },
                 {
                     name: "The Big O Notation",
                     description: "The big O notation is probably one of the most important concepts in CS to learn",
                     thumbnail: "https://danielmiessler.com/images/big-o-chart-tutorial-bazar-aymptotic-notations-1.png",
                     author: "Laith Harb",
-                    publishedDate: "coming soon",
+                    publishedDate: "2020-04-25",
                     isPublished: true,
                     id: "dsfsa43q21gs",
                     path: "big-o-notation"

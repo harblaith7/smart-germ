@@ -1,0 +1,177 @@
+@import "../../sass/mixins.scss";
+@import "../../sass/variables.scss";
+
+.GraphQL {
+
+    font-family: "Montserrat";
+    
+
+    &__container {
+
+        width: 75%;
+        margin: 0 auto;
+        padding: 20rem 0 10rem 0;
+        
+    }
+
+    &__heading {
+        font-size: 5rem;
+        margin-bottom: 2rem;
+    }
+
+    &__description {
+        font-size: 2rem;
+        padding-top: 1.5rem;
+        line-height: 3.25rem;
+        margin-bottom: 1rem;
+
+        & span {
+            font-weight: 700;
+        }
+
+        & a {
+            text-decoration: none;
+            color: rgb(96, 96, 206)
+        }
+    }
+
+    &__sub-heading {
+        font-size: 3.5rem;
+        margin-top: 2.5rem;
+    }
+
+    &__subber-heading {
+        font-size: 2.5rem;
+        margin-top: 2.5rem;
+    }
+
+    &__gif-container {
+        display: flex;
+        justify-content: left;
+        z-index: 3;
+        padding: 2rem 0;
+    }
+
+    &__gif {
+        margin: 0 auto;
+        z-index: -3;
+    }
+
+    &__list {
+        margin-top: 2rem;
+    }
+
+    &__list-item {
+        font-size: 1.9rem;
+        margin-left: 2rem;
+        margin-top: 0.75rem;
+
+        & span {
+            font-weight: 700;
+        }
+    }
+
+    &__img {
+        width: 15rem;
+        padding-top: 2rem;
+    }
+
+    &__image-container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    &__terminal-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 0rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__terminal-code {
+        background-color: rgb(17, 17, 17);
+        color: rgb(238, 235, 235);
+        width: auto;
+        padding: 1rem 2rem;
+        font-size: 2rem;
+        border-radius: 0.5rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+
+        & .yellow {
+            color : rgb(219, 219, 7)
+        }
+    }
+
+    &__non-terminal-code {
+        background-color: rgba(228, 163, 163, 0.719);
+        color: rgb(44, 43, 43);
+        width: auto;
+        padding: 1rem 2rem;
+        font-size: 2rem;
+        border-radius: 0.5rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+
+        & .yellow {
+            color : rgb(219, 219, 7)
+        }
+
+        & span {
+            font-weight: 700;
+        }
+    }
+
+    &__code-img {
+        width: 60%;
+        border-radius: 0.5rem;
+        margin-bottom: 2rem;
+
+        &--larger  {
+            width: 80%
+        }
+
+        &--smaller {
+            width: 40%
+        }
+
+        &--smallest {
+            width: 30%
+        }
+
+        &--smallester {
+            width: 20%
+        }
+    }
+
+    &__code {
+        @extend .GraphQL__terminal-code;
+        line-height: 3rem;
+        
+        & .second-line {
+            margin-left: 5rem;
+        }
+
+        & .third-line {
+            margin-left: 10rem;
+        }
+
+        & .purple {
+            color: rgb(194, 22, 194)
+        }
+
+        & .darker-blue {
+            color: rgb(12, 105, 192)
+        }
+
+        
+    }
+}
+
+.lighter-blue {
+    color: rgb(80, 161, 199)
+}
+
+
