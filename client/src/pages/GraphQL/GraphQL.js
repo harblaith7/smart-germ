@@ -11,6 +11,27 @@ import code4 from "../../assets/GraphQL/code-4.png"
 import code5 from "../../assets/GraphQL/code-5.png"
 import code6 from "../../assets/GraphQL/code-6.png"
 import code7 from "../../assets/GraphQL/code-7.png"
+import code8 from "../../assets/GraphQL/code-8.png"
+import code9 from "../../assets/GraphQL/code-9.png"
+import code10 from "../../assets/GraphQL/code-10.png"
+import code11 from "../../assets/GraphQL/code-11.png"
+import code12 from "../../assets/GraphQL/code-12.png"
+import code13 from "../../assets/GraphQL/code-13.png"
+import code15 from "../../assets/GraphQL/code-15.png"
+import code16 from "../../assets/GraphQL/code-16.png"
+import code17 from "../../assets/GraphQL/code-17.png"
+import code18 from "../../assets/GraphQL/code-18.png"
+import code19 from "../../assets/GraphQL/code-19.png"
+import code20 from "../../assets/GraphQL/code-20.png"
+import code21 from "../../assets/GraphQL/code-21.png"
+import code22 from "../../assets/GraphQL/code-22.png"
+//import code23 from "../../assets/GraphQL/code-23.png"
+//import code24 from "../../assets/GraphQL/code-24.png"
+//import code25 from "../../assets/GraphQL/code-25.png"
+//import code26 from "../../assets/GraphQL/code-26.png"
+//import code27 from "../../assets/GraphQL/code-27.png"
+//import code28 from "../../assets/GraphQL/code-28.png"
+//import code29 from "../../assets/GraphQL/code-29.png"
 
 class GraphQL extends Component {
     render() {
@@ -316,6 +337,194 @@ class GraphQL extends Component {
                     <h3 className="TestingArticle__subber-heading">
                         Resolvers
                     </h3>
+                    <p className="GraphQL__description">
+                        Alright so we defined our schemas, but they still don't return to anything yet. That is where our <span>resolvers</span> come in
+                        to play. 
+                    </p>
+                    <p className="GraphQL__description">
+                        Each schema must have a resolver if you want it to return anything. A resolver is simply 
+                        an <span>object</span> that consists of <span>methods</span> that match the 
+                        property names on the schema. These methods will eventually return a value that matches up with the 
+                        <span> type</span> you specified on the schema.
+                    </p>
+                    <p className="GraphQL__description">
+                        Let's write a resolver for our <span>Query</span> schema.
+                    </p>
+                    <p className="GraphQL__description">
+                        In the <span>resolver folder</span>, create a new file called <span>Query.js</span> and insert the following
+                        in it:
+                    </p>
+                    <div className="TestingArticle__terminal-container" id="graphql-diagram-1">
+                        <img src={code8} alt="" className="GraphQL__code-img GraphQL__code-img--smallest"/>
+                    </div>
+                    <p className="GraphQL__description">
+                        As you can see, the <span>Query resolver</span> consists of a method called <span>user</span> that returns an 
+                        object that abides to the type definition specified by the <span>user property</span> on the 
+                        <span> Query schema.</span>
+                    </p>
+                    <p className="GraphQL__description">
+                        Now to connect it all together, we must <span>export default</span> that file and then import it into <span>index.js</span>.
+                        We then can add it to the resolvers parameter as a property.    
+                    </p>
+                    <div className="TestingArticle__terminal-container" id="graphql-diagram-1">
+                        <img src={code9} alt="" className="GraphQL__code-img GraphQL__code-img--smallest"/>
+                    </div>
+                    <h3 className="TestingArticle__subber-heading">
+                        GraphQL Playground
+                    </h3>
+                    <p className="GraphQL__description">
+                        Now that we have our schemas and resolvers in place, we can finally use our GraphQL API in the frontend to 
+                        fetch our data.
+                    </p>
+                    <p className="GraphQL__description">
+                        Initially, we will be using a neat interface called <span>GraphQL Playground</span> to accomplish this.
+                        To open it up, simply execute <span>npm run start</span> inside your GraphQL directory. If everything is 
+                        written correctly, you should see the playground on <span>localhost:4000</span>.
+                    </p>
+                    <div className="TestingArticle__terminal-container" id="graphql-diagram-1">
+                        <img src={code5} alt="" className="GraphQL__code-img "/>
+                    </div>
+                    <p className="GraphQL__description">
+                        Here, we can write our queries and fetch our data. When we are fetching data we alway start with the keyword
+                        <span> query</span>. Inside the query object we then state whatever it is we are looking for. In this case, 
+                        we want to fetch the <span>user</span>.
+                    </p>
+                    <p className="GraphQL__description">
+                        Because user does not return a <span>scalar type</span>, but rather a <span>custom type</span>, we must again specify exactly what we 
+                        want from the user. If we only need the name and weight of the user, then we specify those scalar types inside the <span>user</span> object.
+                    </p>
+                    <p className="GraphQL__description">
+                        Therefore, the query and the appropriate results should look something like this:
+                    </p>
+                    <div className="TestingArticle__terminal-container" id="graphql-diagram-1">
+                        <img src={code10} alt="" className="GraphQL__code-img"/>
+                    </div>
+                    <p className="GraphQL__description">
+                        Notice that we get exactly what we asked for, nothing more, nothing less. This is really amazing, as with a REST API,
+                        you would typically get back all of the user data.
+                    </p>
+                    <h3 className="TestingArticle__subber-heading">
+                        The Context (ctx) Parameter
+                    </h3>
+                    <p className="GraphQL__description">
+                        Typically an application has more than one user and hopefully ours will too. Let's create multiple users 
+                         in our <span>db.js</span> file and then <span>export default</span> that data.
+                    </p>
+                    <p className="GraphQL__description">
+                        This is how it should look like at the end:
+                    </p>
+                    <div className="TestingArticle__terminal-container" id="graphql-diagram-1">
+                        <img src={code11} alt="" className="GraphQL__code-img GraphQL__code-img--smallest"/>
+                    </div>
+                    <p className="GraphQL__description">
+                        Now to get access to this data in each of our resolvers, we must import <span>db </span>
+                        into <span>index.js</span> and place it in something called the <span> context</span>.
+                    </p>
+                    <p className="GraphQL__description">
+                        Below the <span>resolvers</span> object, create another object called <span>context </span>
+                        and place <span>db</span> into it.
+                    </p>
+                    <div className="TestingArticle__terminal-container" id="graphql-diagram-1">
+                        <img src={code12} alt="" className="GraphQL__code-img GraphQL__code-img--smallest"/>
+                    </div>
+                    <p className="GraphQL__description">
+                        We must now make a few changes to our <span>schemas and resolvers</span>. Firstly, in our Query schema, the user 
+                        property is no longer returning an object with <span>type User</span>, but rather an <span>array</span> of objects 
+                        with <span>type User</span>. To specify that the type is now an array of Users we do the following:
+                    </p>
+                    <div className="TestingArticle__terminal-container" id="graphql-diagram-1">
+                        <img src={code13} alt="" className="GraphQL__code-img GraphQL__code-img--smallester"/>
+                    </div>
+                    <p className="GraphQL__description">
+                        Now in our user resolver, we must extract the data from the <span>context</span>. Each resolver can take in four 
+                        parameters, typically called <span>parent</span>, <span>args</span>, <span>ctx</span>, and <span>info</span>.
+                        We will discuss them all in detail, but now we will focus on <span>ctx</span>
+                    </p>
+                    <div className="GraphQL__description">
+                        Anything we placed in our context object in index.js, can be extracted out by any resolver with the <span>ctx </span>
+                        parameter.
+                    </div>
+                    <div className="GraphQL__description">
+                        Therefore, our new resolver should look something like this:
+                    </div>
+                    <div className="TestingArticle__terminal-container" id="graphql-diagram-1">
+                        <img src={code15} alt="" className="GraphQL__code-img GraphQL__code-img--smaller"/>
+                    </div>
+                    <div className="GraphQL__description">
+                        With a little destructuring, we can simplify it into:
+                    </div>
+                    <div className="TestingArticle__terminal-container" id="graphql-diagram-1">
+                        <img src={code16} alt="" className="GraphQL__code-img GraphQL__code-img--smaller"/>
+                    </div>
+                    <div className="GraphQL__description">
+                        Now in our <span>GraphQL Playground</span>, if we write the exact same query:
+                    </div>
+                    <div className="TestingArticle__terminal-container" id="graphql-diagram-1">
+                        <img src={code17} alt="" className="GraphQL__code-img GraphQL__code-img--smallester"/>
+                    </div>
+                    <div className="GraphQL__description">
+                        We get the following results:
+                    </div>
+                    <div className="TestingArticle__terminal-container" id="graphql-diagram-1">
+                        <img src={code18} alt="" className="GraphQL__code-img GraphQL__code-img--smallest"/>
+                    </div>
+                    <h3 className="TestingArticle__subber-heading">
+                        The Arguments (args) Parameter
+                    </h3>
+                    <div className="GraphQL__description">
+                        Currently, we have one huge limitation with our application. Whenever we ask for user, we get all the users back.
+                        However, sometimes we may only want some of the users based on a specific criteria. 
+                    </div>
+                    <div className="GraphQL__description">
+                        For instance, let's imagine that we want to calculate how many calories a user with a specific <span>id</span> should be 
+                        consuming. To figure that out, we need that user's <span>age</span>, <span>weight</span>, <span>height</span>, and whether 
+                        or not they <span>wantsToLoseWeight</span>.
+                    </div>
+                    <div className="GraphQL__description">
+                        With our current logic, we can fetch all that information, but it would be for every user. To selectively select exactly what 
+                        user we want from our data, we can use <span>arguments</span>.
+                    </div>
+                    <div className="GraphQL__description">
+                        In our <span>Query schema</span>, we can specify the presences of a parameter by doing the following:
+                    </div>
+                    <div className="TestingArticle__terminal-container" id="graphql-diagram-1">
+                        <img src={code19} alt="" className="GraphQL__code-img GraphQL__code-img--smallest"/>
+                    </div>
+                    <div className="GraphQL__description">
+                        Here we are saying that we can pass in a <span>id value</span> to the <span>id parameter</span>. 
+                        Once we do that, we can access it within our resolvers through the <span>args</span> parameter.
+                    </div>
+                    <div className="GraphQL__description">
+                        Here we are saying that we can pass in a <span>id value</span> to the <span>id parameter</span>. 
+                        Once we do that, we can access it within our resolvers through the <span>args</span> parameter.
+                    </div>
+                    <div className="GraphQL__description">
+                        Once accessed, we can write whatever logic is neccessary in our resolver:
+                    </div>
+                    <div className="TestingArticle__terminal-container" id="graphql-diagram-1">
+                        <img src={code20} alt="" className="GraphQL__code-img GraphQL__code-img--smaller"/>
+                    </div>
+                    <div className="GraphQL__description">
+                        Firstly, we are checking if the <span>id</span> was even passed in or not. If not, then we 
+                        simple return all the users. However, if it was, then we have some additional steps. 
+                    </div>
+                    <div className="GraphQL__description">
+                        We must first check if a user with that <span>id</span> even exists by using the <span>.some()</span> method. If they don't, then we 
+                        simply <span>throw an error</span> stating that there is no user with that id. However, if there 
+                        is a user with that id, we then use the <span>.filter()</span> method to find and return it.
+                    </div>
+                    <div className="GraphQL__description">
+                        Now in <span>GraphQL Playground</span>, we can make the following request:
+                    </div>
+                    <div className="TestingArticle__terminal-container" id="graphql-diagram-1">
+                        <img src={code21} alt="" className="GraphQL__code-img GraphQL__code-img--smallest"/>
+                    </div>
+                    <div className="GraphQL__description">
+                        To get the following data:
+                    </div>
+                    <div className="TestingArticle__terminal-container" id="graphql-diagram-1">
+                        <img src={code22} alt="" className="GraphQL__code-img GraphQL__code-img--smallest"/>
+                    </div>
                 </div>
                 
             </div>
